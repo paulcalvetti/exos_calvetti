@@ -1,5 +1,6 @@
 import numpy as np
 import functools
+from utility_functions import *
 
 ## STANDARD KALMAN UPDATES
 def forwardUpdate(f,F,v,A,B,CovH,CovV,meanH,meanV):
@@ -22,24 +23,48 @@ def forwardUpdate(f,F,v,A,B,CovH,CovV,meanH,meanV):
     # fnew : : filterered mean p(h(t+1)|v(1:t+1))
     # Fnew : filterered covariance p(h(t+1)|v(1:t+1))
     # logpgvg : log p(v(t+1)|v(1:t))
-    muh = np.matmul(A,f)+meanH
-    muv = np.matmul(B,muh)+meanV
-    Shh = np.matmul(np.matmul(A,F),A.T)+CovH
-    Svh = np.matmul(B,Shh)
+    # print('A',A)
+    # print('f',f)
+    # print('A*f',np.dot(A,f))
+    # print('np.array([meanH]).T',np.array([meanH])[0])
+
+
+    muh = np.dot(A,f)+np.array([meanH]).T
+
+
+    # print('muh',muh)
+    muv = np.dot(B,muh) + meanV
+
+    Shh = np.dot(np.dot(A,F),A.T)+CovH
+
+
+    Svh = np.dot(B,Shh)
+
     #Svv=B*Shh*B.T+CovV
-    Svv=np.matmul(Svh,B.T)+CovV
+
+    Svv=np.dot(Svh,B.T)+CovV
+    # print('v',v)
+    # print('muv', muv)
     delta = v-muv
 
     #HOW TO REPLACE THE BACKSLASH-- UNIQUE SOLUTION???
+    # print('del: ',(delta))
+    # print('Svv:  ',(Svv))
     invSvvdel=delta/Svv
 
-    fnew = muh+np.matmul(Svh.T,invSvvdel)
+    fnew = (muh.T+Svh.T*invSvvdel).T
     #Fnew=Shh-Svh.T*(Svv\Svh) Fnew=0.5*(Fnew+Fnew.T)
     #K = Shh*B.T/Svv # Kalman Gain
     K = Svh.T/Svv # Kalman Gain
-    tmp=np.identity(size(A))-np.matmul(K,B)
-    Fnew =  functools.reduce(np.matmul, [tmp,Shh,tmp.T])+functools.reduce(np.matmul, [K,CovV,K.T])   # Joseph's form
-    logpvgv = -0.5*np.matmul(delta.T,invSvvdel)-0.5*logdet(2*pi*Svv) ## THiS iS WHERE THE TiME iS SPENT.
+    tmp=np.identity(np.shape(A)[0])-np.dot(K,B)
+
+    Fnew =  functools.reduce(np.dot, [tmp,Shh,tmp.T])+CovV*np.dot(K,K.T)   # Joseph's form
+
+
+    logpvgv = -0.5*np.dot(delta.T,invSvvdel)-0.5*logdet(2*np.pi*Svv) ## THiS iS WHERE THE TiME iS SPENT.
+    # print('orig code: ',logpvgv)
+    # logpvgv = -0.5 * delta * invSvvdel - 0.5 * logdet(2 * np.pi * Svv)
+    # print('here paul ',logpvgv)
     return fnew, Fnew, logpvgv
 
 
@@ -67,7 +92,6 @@ def backwardUpdate(g,G,f,F,A,CovH,meanH):
     #Shtptp=A*F*A.T+CovH
     Shtptp = np.matmul(Shtpt,A.T)+CovH
 
-    ###BLACKSLASH
     leftA = (Shtpt.T)/Shtptp
     leftS = F - np.matmul(leftA,Shtpt)
     leftm = f - np.matmul(leftA,muh)
@@ -77,7 +101,8 @@ def backwardUpdate(g,G,f,F,A,CovH,meanH):
     #Gpnew = leftA*G+gnew*g.T # smoothed <h_t h_{t+1}>
     Gnew = np.matmul(leftAG,leftA.T)+leftS
     Gnew= 0.5*(Gnew+Gnew.T) # could also use Joseph's form if desired
-    Gpnew = leftAG+gnew*g.T # smoothed <h_t h_{t+1}>
+    #Gpnew = leftAG+gnew*g.T # smoothed <h_t h_{t+1}> MY COMMENT
+    Gpnew = leftAG + gnew @ g.T
     return gnew, Gnew, Gpnew
 
 

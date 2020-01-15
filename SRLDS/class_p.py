@@ -60,10 +60,10 @@ class P():
 
 
 
-p = P(4,5)
-print(p.ps1[0])
+#p = P(4,5)
+#print(np.shape(p.ps1))
 
-print('end')
+#print('end')
 
 
 
