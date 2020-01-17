@@ -3,6 +3,7 @@ from filtering import *
 from smoother import *
 
 S = 2
+T=10
 V= np.array([[-0.420712177038818,	5.21814302255085,	4.56353635981320,	-0.839740376053356,	-7.28499062958075,	1.43048294859174,	3.22146012105579,	1.25649234006580, -0.442641862368479,-6.13245776973098]])
 
 
@@ -78,7 +79,7 @@ sig1h[1] = np.array([[4.38132702577706e-06,	-1.41519735498849e-06,	5.63019466450
 
 pstgstm1ctm1 = np.empty(shape = [2,2,2])
 pstgstm1ctm1[:,:,0] = np.array([[0.5637,    0.4362],[0.4363,    0.5638]])
-pstgstm1ctm1[:,:,1] = np.array([[1,    0],[0,    1]])
+pstgstm1ctm1[:,:,1] = np.array([[1,    1.0000e-06],[1.0000e-06,    1]])
 
 
 ps1 = np.array([[.964, .036]])
@@ -129,4 +130,53 @@ p = P_testing(B0, mu0v,sig0v,mu0h,sig0h,A,B1,mu1v,sig1v,mu1h,sig1h,pstgstm1ctm1,
 f, F, w, alpha, loglik = filtering(p,V,2)
 
 x,beta = RTSLinearSmoother(p,V,f,F,w,2)
-print('done')
+print(x)
+mass_aprox = np.zeros(shape = [S,T])
+print('-----')
+for t in range(T):
+    for s in range(S):
+        print(sum(sum(x[t][s])))
+        #mass_aprox[s, t] =
+        #mass_aprox[s,t] = sum(sum(x[t][s])) if sum(sum(x[t][s])) <=1 else 1
+        mass_aprox[s, t] = sum(sum(x[t][s]))
+print(mass_aprox)
+print(np.sum(mass_aprox,axis = 0))
+
+
+
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import rc
+import pandas as pd
+
+# Data
+r = range(T)
+raw_data = {'State 0': mass_aprox[0], 'State 1': mass_aprox[1]}
+df = pd.DataFrame(raw_data)
+
+# From raw value to percentage
+totals = [i + j for i, j in zip(df['State 0'], df['State 1'])]
+greenBars = [i / j * 100 for i, j in zip(df['State 0'], totals)]
+orangeBars = [i / j * 100 for i, j in zip(df['State 1'], totals)]
+
+
+# plot
+barWidth = 1
+names = ('A', 'B', 'C', 'D', 'E')
+# Create green Bars
+plt.bar(r, greenBars, color='#b5ffb9', edgecolor='white', width=barWidth)
+# Create orange Bars
+plt.bar(r, orangeBars, bottom=greenBars, color='#f9bc86', edgecolor='white', width=barWidth)
+# Create blue Bars
+
+
+# Custom x axis
+plt.xticks(r, names)
+plt.xlabel("group")
+
+# Show graphic
+plt.show()
+
+

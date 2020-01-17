@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 #T, S, dh original parameters
-def createData(T,S,dh):
+def createData(V,T,S,dh):
     np.random.seed(1337)
     ceq0=1
     ceq1=2
@@ -21,14 +21,14 @@ def createData(T,S,dh):
     #INITIALISE
     s = np.zeros(T)
     H = np.zeros([dh,T])
-    V = np.zeros([dv,T])
+    #V = np.zeros([dv,T])
 
 
     t=0
     s[t] = int(randgen(p.ps1))
     s = np.int_(s) #convert np float64 to int64 to enable indexing
     H[:,t] = (p.mu1h[s[t]]+(np.linalg.cholesky(p.sig1h[s[t]])@np.random.normal(size = [dh, 1])))[:, 0]
-    V[:,t] = p.B1[s[t]] @ H[:,t] + p.mu1v[s[t]]+np.linalg.cholesky(np.array([[p.sig0v[s[t]]]])) @ np.random.normal(size = [dv, 1])
+    #V[:,t] = p.B1[s[t]] @ H[:,t] + p.mu1v[s[t]]+np.linalg.cholesky(np.array([[p.sig0v[s[t]]]])) @ np.random.normal(size = [dv, 1])
 
     t = 1
     s[t] = randgen(p.pstgstm1ctm1[:][s[t-1]][1])
@@ -37,11 +37,11 @@ def createData(T,S,dh):
     if s[t] == s[t - 1]: # states match --> no reset
 
         H[:, t] = (p.A[s[t]]@np.array([H[:,t-1]]).T + p.mu0h[s[t]] + np.linalg.cholesky(p.sig0h[s[t]]) @ np.random.normal(size = [dh,1]))[0]
-        V[:,t] = p.B0[s[t]]@H[:,t] + p.mu0v[s[t]] + np.linalg.cholesky(np.array([[p.sig0v[s[t]]]])) @ np.random.normal(size = [dv,1])
+        #V[:,t] = p.B0[s[t]]@H[:,t] + p.mu0v[s[t]] + np.linalg.cholesky(np.array([[p.sig0v[s[t]]]])) @ np.random.normal(size = [dv,1])
 
     else: #states different --> reset
         H[:, t] = (p.mu1h[s[t]] + (np.linalg.cholesky(p.sig1h[s[t]]) @ np.random.normal(size=[dh, 1])))[:, 0]
-        V[:, t] = p.B1[s[t]] @ H[:, t] + p.mu1v[s[t]] + np.linalg.cholesky(np.array([[p.sig0v[s[t]]]])) @ np.random.normal(size=[dv, 1])
+        #V[:, t] = p.B1[s[t]] @ H[:, t] + p.mu1v[s[t]] + np.linalg.cholesky(np.array([[p.sig0v[s[t]]]])) @ np.random.normal(size=[dv, 1])
 
     for t in range(2,T):
 
@@ -53,14 +53,14 @@ def createData(T,S,dh):
 
             H[:, t] = (p.A[s[t]] @ np.array([H[:, t - 1]]).T + p.mu0h[s[t]] + np.linalg.cholesky(
                 p.sig0h[s[t]]) @ np.random.normal(size=[dh, 1]))[0]
-            V[:, t] = p.B0[s[t]] @ H[:, t] + p.mu0v[s[t]] + np.linalg.cholesky(
-                np.array([[p.sig0v[s[t]]]])) @ np.random.normal(size=[dv, 1])
+            #V[:, t] = p.B0[s[t]] @ H[:, t] + p.mu0v[s[t]] + np.linalg.cholesky(
+              #  np.array([[p.sig0v[s[t]]]])) @ np.random.normal(size=[dv, 1])
 
         else:  # states different --> reset
             H[:, t] = (p.mu1h[s[t]] + (np.linalg.cholesky(p.sig1h[s[t]]) @ np.random.normal(size=[dh, 1])))[:, 0]
-            V[:, t] = p.B1[s[t]] @ H[:, t] + p.mu1v[s[t]] + np.linalg.cholesky(np.array([[p.sig0v[s[t]]]])) @ np.random.normal(size=[dv, 1])
+            #V[:, t] = p.B1[s[t]] @ H[:, t] + p.mu1v[s[t]] + np.linalg.cholesky(np.array([[p.sig0v[s[t]]]])) @ np.random.normal(size=[dv, 1])
 
-    return p,V,s,H
+    return p,s,H
 
 
 #p,V,s,H = createData(20,3,4)

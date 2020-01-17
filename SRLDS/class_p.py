@@ -18,8 +18,8 @@ class P():
         self.sig1v = np.empty(S, dtype=object)
         self.mu1h = np.empty(S, dtype=object)
         self.sig1h = np.empty(S, dtype=object)
-        self.pstgstm1ctm1 = np.empty(S, dtype=object)
-        self.ps1 = np.empty(S, dtype=object)
+        self.pstgstm1ctm1 = np.zeros(shape = [S,S,S], dtype=object)
+        self.ps1 = np.zeros(shape = [1,S], dtype=object)
         self.muh1 = np.empty(S, dtype=object)
         self.sigh1 = np.empty(S, dtype=object)
         for s in range(S):
@@ -34,7 +34,7 @@ class P():
             self.sig1v[s] = 5
             self.mu1h[s] = np.random.normal(size=[dh, 1])
             self.sig1h[s] = randcov(dh)
-            self.ps1[s] = np.random.rand()
+            self.ps1[0,s] = np.random.rand()
             self.muh1[s] = np.random.normal(size=[dh,1])
             self.sigh1[s] = randcov(dh)
 

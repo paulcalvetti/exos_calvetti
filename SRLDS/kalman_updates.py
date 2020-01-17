@@ -1,7 +1,7 @@
 import numpy as np
 import functools
 from utility_functions import *
-
+import numpy.linalg
 ## STANDARD KALMAN UPDATES
 def forwardUpdate(f,F,v,A,B,CovH,CovV,meanH,meanV):
     #LDSFORWARDUPDATE Single Forward update for a Latent Linear Dynamical System (Kalman Filter)
@@ -87,22 +87,22 @@ def backwardUpdate(g,G,f,F,A,CovH,meanH):
     # gnew : smoothed mean p(h(t)|v(1:T))
     # Gnew : smoothed covariance p(h(t)|v(1:T))
     # Gpnew : smoothed cross moment  <h_t h_{t+1}|v(1:T)>
-    muh = np.matmul(A,f)+meanH
-    Shtpt = np.matmul(A,F)
+    muh = np.dot(A,f)+meanH
+    Shtpt = np.dot(A,F)
     #Shtptp=A*F*A.T+CovH
-    Shtptp = np.matmul(Shtpt,A.T)+CovH
+    Shtptp = (np.dot(Shtpt,A.T)+CovH).astype('float64')
 
-    leftA = (Shtpt.T)/Shtptp
-    leftS = F - np.matmul(leftA,Shtpt)
-    leftm = f - np.matmul(leftA,muh)
-    gnew = np.matmul(leftA,g)+leftm
-    leftAG = np.matmul(leftA,G)
+    leftA = np.dot(Shtpt.T,np.linalg.inv(Shtptp))
+    leftS = F - np.dot(leftA,Shtpt)
+    leftm = f - np.dot(leftA,muh)
+    gnew = np.dot(leftA,g)+leftm
+    leftAG = np.dot(leftA,G)
     #Gnew = leftA*G*leftA.T+leftS Gnew=0.5*(Gnew+Gnew.T) # could also use Joseph's form if desired
     #Gpnew = leftA*G+gnew*g.T # smoothed <h_t h_{t+1}>
-    Gnew = np.matmul(leftAG,leftA.T)+leftS
+    Gnew = np.dot(leftAG,leftA.T)+leftS
     Gnew= 0.5*(Gnew+Gnew.T) # could also use Joseph's form if desired
     #Gpnew = leftAG+gnew*g.T # smoothed <h_t h_{t+1}> MY COMMENT
-    Gpnew = leftAG + gnew @ g.T
+    Gpnew = leftAG + np.dot(np.array([gnew]).T, np.array([g]))
     return gnew, Gnew, Gpnew
 
 
