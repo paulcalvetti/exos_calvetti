@@ -7,7 +7,6 @@ def randcov(dh):
     y=np.triu(x) @ np.triu(x).T
     return y
 
-
 ####******************************************************************************
 def randgen(p,m = 1,n = 1,s = None):
     # RANDGEN	Generates discrete random variables given the pdf
@@ -51,8 +50,10 @@ def randgen(p,m = 1,n = 1,s = None):
 
     #y = np.reshape(s[0,y-1], m, n)
     return y
-
-
+a = np.empty(shape = [2,2,2])
+a[:,:,0] = np.array([[0.5637,    0.4362],[0.4363,    0.5638]])
+a[:,:,1] = np.array([[1,    1.0000e-06],[1.0000e-06,    1]])
+print(randgen(a))
 
 #randgen sample inputs look:[0.984742716979373;0.00381432075515675;0.00381432075515675;0.00381432075515675;0.00381432075515675] look:[0.00616167127821327;0.975353314887147;0.00616167127821327;0.00616167127821327;0.00616167127821327]
 #print(randgen(np.array([[0.9,0.9,0.9,0.9,0.5]]).T))

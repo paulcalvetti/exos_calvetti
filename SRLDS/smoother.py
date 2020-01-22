@@ -18,7 +18,7 @@ def RTSLinearSmoother(p,V,f,F,w,numgaussians):
 
 
     # t = T
-    beta = np.empty(shape = [10],dtype = object)
+    beta = np.empty(shape = [T],dtype = object)
     beta[T - 1] = np.sum(w[T - 1], axis = 1)
 
 
@@ -67,15 +67,18 @@ def RTSLinearSmoother(p,V,f,F,w,numgaussians):
             xt[s] = np.zeros(shape = [len(ls[s]),np.size(jstp1[s]) + 1])
 
             for i in range(len(ls[s])):
-                n_i_tp1 = i + 1 if (istp1[s][i]<=ls[s][i]) else i
+                print('t',t,'s: ', s, '. i:', i,'.ls: ',ls, ' istp1: ', istp1)
+                try: n_i_tp1 = i + 1 if (istp1[s][i]<=ls[s][i]) else i
+                except: n_i_tp1 = i
                 #copy in from t + 1
+
                 if n_i_tp1 < np.size(istp1[s]) and ls[s][i] + 1 == istp1[s][n_i_tp1]:
                     print(xt[s][i,1:np.size(jstp1[s])])
                     print(x[t+1][s][1:n_i_tp1])
 
                     xt[s][i, 1:np.size(jstp1[s]) + 1] = x[t + 1][s,n_i_tp1,:np.size(jstp1[s])]
             #will likely be wrong when more than 2 states
-                Z[s] = np.dot(np.delete(p.pstgstm1ctm1[s, :, ceq1], s), np.delete(w[t][:, 0], s)) \
+            Z[s] = np.dot(np.delete(p.pstgstm1ctm1[s, :, ceq1], s), np.delete(w[t][:, 0], s)) \
                    + np.sum(np.dot(np.delete(p.pstgstm1ctm1[s, :, ceq0], s), np.sum(np.delete(w[t], s, axis=0)[0, 1:])))
 
             if istp1[s][0] == 0:

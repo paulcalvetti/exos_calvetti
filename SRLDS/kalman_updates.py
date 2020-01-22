@@ -91,8 +91,9 @@ def backwardUpdate(g,G,f,F,A,CovH,meanH):
     Shtpt = np.dot(A,F)
     #Shtptp=A*F*A.T+CovH
     Shtptp = (np.dot(Shtpt,A.T)+CovH).astype('float64')
-
-    leftA = np.dot(Shtpt.T,np.linalg.inv(Shtptp))
+    print('Shtptp:',Shtptp)
+    #leftA = np.dot(Shtpt.T,np.linalg.inv(Shtptp))
+    leftA = np.dot(Shtpt.T,np.linalg.pinv(Shtptp))
     leftS = F - np.dot(leftA,Shtpt)
     leftm = f - np.dot(leftA,muh)
     gnew = np.dot(leftA,g)+leftm

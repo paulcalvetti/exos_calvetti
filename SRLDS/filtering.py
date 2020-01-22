@@ -26,6 +26,20 @@ def filtering(p,V,numgaussians):
     w = np.empty(T, dtype=object)
     alpha = np.empty(T, dtype=object)
 
+
+
+
+
+    state_mean_est = np.zeros(shape = [2,T])
+    prob_state = np.zeros(shape = [2,T])
+
+
+
+
+
+
+
+
     for t in range(T):
         #changes min(t+1,numgaussians) to min(t+2,numgaussians) since we loop from 0:t-1 due to pythopn indexing
         f[t]=np.zeros(shape = [dh,S,min(t+2,numgaussians)])
@@ -164,9 +178,27 @@ def filtering(p,V,numgaussians):
             # print('at stop 2. s= ',s,'.t = ',t)
             #
             # pdb.set_trace()
-
+        try:
+            ft_no_break = np.squeeze(ft)
+            ft_no_break = ft_no_break[:,1:]
+            w_save = np.reshape(w[t][np.nonzero(w[t])], np.shape(ft_no_break))
+            state_mean_est[:,t] = np.sum(ft_no_break * w_save,axis = 1) / np.sum(w_save,axis = 1)
+            prob_state[:,t] = np.sum(w_save,axis = 1)
+        except:
+            pass
         loglik += logsumexp(np.reshape(logp, (np.size(logp), 1)), np.ones(shape=[1, 2 * S]))
 
+
+    print('done')
+    y = range(np.size(V))
+    plt.plot(np.sum(state_mean_est.T * prob_state.T, axis=1))
+    plt.show()
+    plt.plot(np.sum(state_mean_est.T * prob_state.T, axis=1))
+    plt.plot(V.T)
+
+
+    plt.show()
+    print('a')
     return f, F, w, alpha, loglik
 
 
