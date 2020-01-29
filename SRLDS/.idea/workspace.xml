@@ -11,31 +11,70 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/full_file.py">
+        <entry file="file://$PROJECT_DIR$/smoother.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="-974">
+              <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
               <folding>
-                <element signature="e#0#24#0" expanded="true" />
+                <element signature="e#0#27#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utility_functions.py">
+        <entry file="file://$PROJECT_DIR$/btcusd_resets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="53" column="62" lean-forward="true" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/btcusd_volatility_levels.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kalman_updates.py">
+        <entry file="file://$PROJECT_DIR$/btcusd_volatility.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="95" column="41" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="41" />
+            <state relative-caret-position="80">
+              <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spread_data_1state.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spread_data_2states.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -46,79 +85,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/filtering.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+            <state relative-caret-position="167">
+              <caret line="166" selection-start-line="166" selection-end-line="166" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/real_data_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_matlab.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2670">
-              <caret line="178" column="14" lean-forward="true" selection-start-line="178" selection-start-column="14" selection-end-line="178" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smoother.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="973">
-              <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/class_p.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_creation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-113">
-              <caret line="39" column="134" lean-forward="true" selection-start-line="39" selection-start-column="134" selection-end-line="39" selection-end-column="134" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_matlab copy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,43 +105,47 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>print(ls</find>
-      <find>where</find>
-      <find>reshape</find>
-      <find>jstp1</find>
-      <find>A:</find>
-      <find>meang</find>
-      <find>conc</find>
-      <find>print(</find>
-      <find>gtp1</find>
-      <find>here paul</find>
-      <find>gt</find>
-      <find>x[t</find>
-      <find>x[</find>
-      <find>xtsum</find>
-      <find>xts</find>
-      <find>prin</find>
-      <find>ps1</find>
-      <find>max</find>
-      <find>print</find>
-      <find>pstgstm1ctm1</find>
-      <find>5</find>
-      <find>2</find>
-      <find>v size</find>
-      <find>pst</find>
-      <find>chole</find>
-      <find>dh</find>
-      <find>sig1v</find>
-      <find>try</find>
-      <find>si</find>
+      <find>z2 =</find>
       <find>p.pst</find>
+      <find>herio</find>
+      <find>now here</find>
+      <find>now he</find>
+      <find>ls1</find>
+      <find>.01</find>
+      <find>mean</find>
+      <find>normal</find>
+      <find>EUR Spread</find>
+      <find>reset</find>
+      <find>reset in</find>
+      <find>mea</find>
+      <find>rese</find>
+      <find>print</find>
+      <find>t 12</find>
+      <find>ls[s</find>
+      <find>ls[s]</find>
+      <find>t</find>
+      <find>745</find>
+      <find>1745</find>
+      <find>nppppooo</find>
+      <find>1500</find>
+      <find>pstm1</find>
+      <find>log</find>
+      <find>vwap</find>
+      <find>ls</find>
+      <find>ls[s] =</find>
+      <find>V</find>
+      <find>plt.plot</find>
     </findStrings>
     <replaceStrings>
       <replace>.T</replace>
       <replace>matmul</replace>
       <replace>np.random.normal</replace>
       <replace>,</replace>
+      <replace>.000000001</replace>
+      <replace>time</replace>
+      <replace>.000001</replace>
       <replace>#</replace>
+      <replace>log return</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -180,23 +154,30 @@
         <option value="$PROJECT_DIR$/python_matlab.py" />
         <option value="$PROJECT_DIR$/python_in_matlab_test.py" />
         <option value="$PROJECT_DIR$/ldsForward.py" />
-        <option value="$PROJECT_DIR$/data_matlab.py" />
         <option value="$PROJECT_DIR$/data_creation.py" />
         <option value="$PROJECT_DIR$/kalman_updates.py" />
         <option value="$PROJECT_DIR$/utility_functions.py" />
-        <option value="$PROJECT_DIR$/class_p.py" />
-        <option value="$PROJECT_DIR$/smoother.py" />
-        <option value="$PROJECT_DIR$/data_matlab copy.py" />
-        <option value="$PROJECT_DIR$/real_data_test.py" />
         <option value="$PROJECT_DIR$/full_file.py" />
+        <option value="$PROJECT_DIR$/real_data_test.py" />
+        <option value="$PROJECT_DIR$/spread_data.py" />
+        <option value="$PROJECT_DIR$/data_matlab copy.py" />
+        <option value="$PROJECT_DIR$/btcusd.py" />
+        <option value="$PROJECT_DIR$/data_matlab.py" />
+        <option value="$PROJECT_DIR$/smoother.py" />
+        <option value="$PROJECT_DIR$/class_p.py" />
+        <option value="$PROJECT_DIR$/1 state attempt.py" />
+        <option value="$PROJECT_DIR$/btcusd_resets.py" />
         <option value="$PROJECT_DIR$/filtering.py" />
+        <option value="$PROJECT_DIR$/btcusd_volatility.py" />
+        <option value="$PROJECT_DIR$/spread_data_1state.py" />
+        <option value="$PROJECT_DIR$/spread_data_2states.py" />
+        <option value="$PROJECT_DIR$/btcusd_volatility_levels.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="243" />
-    <option name="y" value="24" />
-    <option name="width" value="1197" />
+    <option name="y" value="23" />
+    <option name="width" value="1662" />
     <option name="height" value="797" />
   </component>
   <component name="ProjectView">
@@ -239,8 +220,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.real_data_test">
-    <configuration name="data_matlab copy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.btcusd_resets">
+    <configuration name="btcusd_resets" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="exos" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -252,7 +233,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_matlab copy.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/btcusd_resets.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -261,7 +242,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="data_matlab" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="btcusd_volatility" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="exos" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -273,7 +254,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_matlab.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/btcusd_volatility.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -282,7 +263,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="full_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="btcusd_volatility_levels" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="exos" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -294,7 +275,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/full_file.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/btcusd_volatility_levels.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -303,7 +284,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="real_data_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="spread_data_1state" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="exos" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -315,7 +296,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/real_data_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spread_data_1state.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -324,7 +305,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="utility_functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="spread_data_2states" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="exos" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -336,7 +317,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utility_functions.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spread_data_2states.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -347,11 +328,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.real_data_test" />
-        <item itemvalue="Python.full_file" />
-        <item itemvalue="Python.data_matlab" />
-        <item itemvalue="Python.data_matlab copy" />
-        <item itemvalue="Python.utility_functions" />
+        <item itemvalue="Python.btcusd_resets" />
+        <item itemvalue="Python.btcusd_volatility_levels" />
+        <item itemvalue="Python.spread_data_2states" />
+        <item itemvalue="Python.spread_data_1state" />
+        <item itemvalue="Python.btcusd_volatility" />
       </list>
     </recent_temporary>
   </component>
@@ -369,20 +350,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="243" y="24" width="1197" height="797" extended-state="0" />
+    <frame x="0" y="23" width="1662" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23469388" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17976843" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" sideWeight="0.49775785" weight="0.32907802" />
+      <window_info anchor="bottom" id="Python Console" sideWeight="0.49482024" weight="0.32907802" />
       <window_info anchor="bottom" id="Terminal" weight="0.32913166" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50282085" side_tool="true" weight="0.24397163" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.5082267" side_tool="true" visible="true" weight="0.41985816" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49682426" visible="true" weight="0.50070924" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3602837" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4917733" visible="true" weight="0.41985816" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49725777" weight="0.3134752" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -395,14 +376,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/filtering.py</url>
-          <line>191</line>
-          <option name="timeStamp" value="192" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/filtering.py</url>
-          <line>200</line>
-          <option name="timeStamp" value="194" />
+          <url>file://$PROJECT_DIR$/spread_data_2states.py</url>
+          <line>235</line>
+          <option name="timeStamp" value="218" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -415,49 +391,103 @@
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>df2['time']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>df2['time'].values</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>df2['dates']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>plt.plot(np.sum(reset_prob,axis=0))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>plt.bar(range(T),np.sum(reset_prob,axis=0))
+plt.twinx()
+plt.plot(df2['vwap'].tolist())</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>plt.bar(range(T),np.sum(reset_prob,axis=0),alpha=.5)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.shape(np.sum(reset_prob,axis=0))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.shape(np.sum(reset_prob))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.shape(reset_prob)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>plt.plot(V.T)</expression-string>
+        <expression-string>Axes3D.scatter(xs=res_df['sig0v_val'].tolist(), ys=res_df['abs_mu1h'].tolist(), zs=res_df['sumret'].tolist())</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>plt.plot(V)</expression-string>
+        <expression-string>Axes3D.scatter(res_df['sig0v_val'].tolist(), ys=res_df['abs_mu1h'].tolist(), zs=res_df['sumret'].tolist())</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>plt.plot(np.sum(state_mean_est.T * prob_state.T, axis=1), y)</expression-string>
+        <expression-string>Axes3D.scatter(res_df['sig0v_val'].tolist(), res_df['abs_mu1h'].tolist(), zs=res_df['sumret'].tolist())</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>y = range(np.size(V))</expression-string>
+        <expression-string>Axes3D.scatter(res_df['sig0v_val'].tolist(), res_df['abs_mu1h'].tolist(), res_df['sumret'].tolist())</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>plt.plot(np.sum(state_mean_est.T * prob_state.T, axis=1),V.T)</expression-string>
+        <expression-string>from mpl_toolkits.mplot3d import Axes3D</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>plt.plot(np.sum(state_mean_est.T * prob_state.T,axis = 1))</expression-string>
+        <expression-string>res_df</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.sum(state_mean_est.T * prob_state.T,axis = 1)</expression-string>
+        <expression-string>np.size(X)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.sum(state_mean_est.T * prob_state.T,axis = 0)</expression-string>
+        <expression-string>Z.reshape([np.size(X),np.size(Y)])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>plt.plot(np.sum(state_mean_est.T * prob_state.T,axis = 0))</expression-string>
+        <expression-string>Z</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Z = np.array([z_vals])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -516,13 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utility_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -540,49 +563,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_matlab copy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class_p.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smoother.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="973">
-          <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_creation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-113">
           <caret line="39" column="134" lean-forward="true" selection-start-line="39" selection-start-column="134" selection-end-line="39" selection-end-column="134" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_matlab.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2670">
-          <caret line="178" column="14" lean-forward="true" selection-start-line="178" selection-start-column="14" selection-end-line="178" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -597,22 +583,155 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/filtering.py">
+    <entry file="file://$PROJECT_DIR$/real_data_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spread_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_matlab copy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/btcusd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1770">
+          <caret line="137" column="52" selection-start-line="137" selection-start-column="52" selection-end-line="137" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_matlab.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/btcusd_volatility_levels copy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smoother.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-974">
+          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/real_data_test.py">
+    <entry file="file://$PROJECT_DIR$/class_p.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1 state attempt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filtering.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="166" selection-start-line="166" selection-end-line="166" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/btcusd_volatility.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spread_data_1state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spread_data_2states.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/btcusd_resets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/btcusd_volatility_levels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -127,7 +127,7 @@ class P_testing():
 
 p = P_testing(B0, mu0v,sig0v,mu0h,sig0h,A,B1,mu1v,sig1v,mu1h,sig1h,pstgstm1ctm1,ps1,muh1,sigh1)
 
-f, F, w, alpha, loglik = filtering(p,V,2)
+f, F, w, alpha, loglik, reset_prob = filtering(p,V,2)
 
 x,beta = RTSLinearSmoother(p,V,f,F,w,2)
 print(x)

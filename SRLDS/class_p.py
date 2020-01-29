@@ -2,68 +2,21 @@ from utility_functions import *
 
 
 class P():
-     #p.B1, p.mu1v, p.sig1v, p.mu1h, p.sig1h, p.pstgstm1ctm1, p.ps1, p.muh1, p.sigh1
-    def __init__(self, S, dh):
-
-
-
-        self.B0 = np.zeros(shape = [S,dh])
-        self.mu0v = np.zeros(S)
-        self.sig0v = np.zeros(S)
-        self.mu0h = np.zeros(shape = [S,dh])
-        self.sig0h = np.zeros(shape = [S,dh,dh])
-        self.A = np.zeros(shape = [S,dh,dh])
-        self.B1 = np.zeros(shape = [S,dh])
-        self.mu1v = np.zeros(S)
-        self.sig1v = np.zeros(S)
-        self.mu1h = np.zeros(shape = [S,dh])
-        self.sig1h = np.zeros(shape = [S, dh, dh])
-        self.pstgstm1ctm1 = np.zeros(shape = [S,S,S])
-        self.ps1 = np.zeros(shape = [1,S])
-        self.muh1 = np.zeros(shape = [S,dh])
-        self.sigh1 = np.zeros(shape = [S, dh, dh])
-        for s in range(S):
-            self.B0[s,:] = np.random.normal(size = dh)
-            self.mu0v[s] = np.random.normal()
-            self.sig0v[s] = 5
-            self.mu0h[s,:] = np.random.normal(size = dh)
-            self.sig0h[s,:,:] = randcov(dh)
-            self.A[s] = np.random.normal(size=[dh,dh])
-            self.B1[s] = np.random.normal(size= dh)
-            self.mu1v[s] = np.random.normal()
-            self.sig1v[s] = 5
-            self.mu1h[s] = np.random.normal(dh)
-            self.sig1h[s] = randcov(dh)
-            self.ps1[0,s] = np.random.rand()
-            self.muh1[s] = np.random.normal(size=dh)
-            self.sigh1[s] = randcov(dh)
-
-
-
-        #initialize self.pstgstm1ctm1
-        for i in range(S):
-            self.pstgstm1ctm1[i] = np.empty(S, dtype=object)
-            for j in range(S):
-
-                self.pstgstm1ctm1[i][j] = np.empty(2, dtype=object)
-                self.pstgstm1ctm1[i][j][1] = .999999    #if the process just flipped, it doesn't flip again now
-                self.pstgstm1ctm1[i][j][0] = np.random.rand()/2+.5   #if the process just flipped, it doesn't flip again now
-        for i in range(S):
-
-            for sp in range(S):
-                if sp != s:
-                    self.pstgstm1ctm1[sp][s] = np.empty(2,dtype=int)
-                    self.pstgstm1ctm1[sp][s][1] = (1 - self.pstgstm1ctm1[s][s][1]) / (S - 1)
-                    self.pstgstm1ctm1[sp][s][0] = (1 - self.pstgstm1ctm1[s][s][0]) / (S - 1)
-
-        self.ps1 = self.ps1/np.sum(self.ps1)
-
-
-
-#p = P(4,5)
-#print(np.shape(p.ps1))
-
-#print('end')
-
+    def __init__(self, B0, mu0v, sig0v, mu0h, sig0h, A, B1, mu1v, sig1v, mu1h, sig1h, pstgstm1ctm1, ps1, muh1, sigh1):
+        self.B0 = B0
+        self.mu0v = mu0v
+        self.sig0v = sig0v
+        self.mu0h = mu0h
+        self.sig0h = sig0h
+        self.A = A
+        self.B1 = B1
+        self.mu1v = mu1v
+        self.sig1v = sig1v
+        self.mu1h = mu1h
+        self.sig1h = sig1h
+        self.pstgstm1ctm1 = pstgstm1ctm1
+        self.ps1 = ps1
+        self.muh1 = muh1
+        self.sigh1 = sigh1
 
 

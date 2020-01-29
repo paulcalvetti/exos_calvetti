@@ -16,10 +16,9 @@ def filtering(p,V,numgaussians):
 
 
     ## initialise
-    #shoudl be length - using size since it is 1 dimensional to get code running
     T = np.size(V)
-    dh = np.size(p.mu0h[1])
-    dv = np.size(p.mu0v[1])
+    dh = np.size(p.mu0h[0])
+    dv = np.size(p.mu0v[0])
     S = np.size(p.ps1)
     f = np.empty(T, dtype=object)
     F = np.empty(T, dtype=object)
@@ -30,8 +29,10 @@ def filtering(p,V,numgaussians):
 
 
 
-    state_mean_est = np.zeros(shape = [2,T])
-    prob_state = np.zeros(shape = [2,T])
+    state_mean_est = np.zeros(shape = [S,T])
+    prob_state = np.zeros(shape = [S,T])
+    reset_prob = np.zeros(shape = [S,T])
+    ft_break = np.zeros(shape = [S,T])
 
 
 
@@ -104,17 +105,22 @@ def filtering(p,V,numgaussians):
             ft[:, s, 0] = ft_temp[:, 0]
 
 
-            pstm1ctm1 = np.zeros(shape = [1, 2])
-            pstm1ctm1[0, ceq1] = w[t - 1][[i for i in range(S) if i != s], 0]
-
-
-            pstm1ctm1[0, ceq0] = np.sum(w[t-1][[i for i in range(S) if i != s], 1:])
-
-            pstgstm1ctm1nots = np.reshape(p.pstgstm1ctm1[s,[i for i in range(S) if i != s],:],(S-1,2))
+            pstm1ctm1 = np.zeros(shape = [S-1, 2])
 
 
 
-            logp[s, 0] = np.sum(np.log(np.dot(np.reshape(pstm1ctm1, (1,np.size(pstm1ctm1))),np.reshape(pstgstm1ctm1nots,(-1,1))))) + logpvgscv
+
+
+            if S == 1:
+                logp[s, 0] = logpvgscv
+            else:
+
+                pstm1ctm1[:, ceq1] = w[t - 1][[i for i in range(S) if i != s], 0]
+
+                pstm1ctm1[:, ceq0] = np.sum(w[t - 1][[i for i in range(S) if i != s], 1:])
+
+                pstgstm1ctm1nots = np.reshape(p.pstgstm1ctm1[s, [i for i in range(S) if i != s], :], (S - 1, 2))
+                logp[s, 0] = np.sum(np.log(np.dot(np.reshape(pstm1ctm1, (1,np.size(pstm1ctm1))),np.reshape(pstgstm1ctm1nots,(-1,1))))) + logpvgscv
 
 
             for j in range(len(ls[s])):
@@ -122,7 +128,7 @@ def filtering(p,V,numgaussians):
                 ft_temp, Ft[:,:, s, j + 1], logpvgsciv = forwardUpdate(np.array([f[t-1][:,s,j]]).T,F[t-1][:,:,s,j],V[:,t],p.A[s],p.B0[s],p.sig0h[s],p.sig0v[s],p.mu0h[s],p.mu0v[s])
 
 
-                #print('ft_temp[:, 0]',ft_temp[:, 0])
+
                 ft[:, s, j + 1] = ft_temp[:, 0]
 
 
@@ -130,17 +136,11 @@ def filtering(p,V,numgaussians):
                 if i == 0: ctm1 = ceq1
                 else: ctm1 = ceq0
                 logp[s, i + 1] = sumlog(np.array([w[t-1][s,i], p.pstgstm1ctm1[s,s,ctm1]])) + logpvgsciv
-                # print('w[1]', w[1])
-                # print('w[2]', w[2])
-                # acb = w[1]
-                # dfg = w[2]
-                # print('at stop 1. s= ', s, '.t = ', t)
-                # pdb.set_trace()
 
 
 
         wt = np.reshape(condexp(np.reshape(logp, (1,np.size(logp)),order = 'F')),np.shape(logp),order = 'F')
-
+        reset_prob[:,t] = wt[:, 0]
         for s in range(S):
 
 
@@ -166,55 +166,29 @@ def filtering(p,V,numgaussians):
 
 
             else:
-                #NOT TESTED YET**********************
                 w[t] = wt
                 f[t][:,s,:] = ft[:,s,ls[s]]
                 F[t][:,:,s,:] = Ft[:,:,s,ls[s]]
             alpha[t][s] = np.sum(w[t][s,:])
-            # print('w[1]',w[1])
-            # print('w[2]',w[2])
-            # acb = w[1]
-            # dfg = w[2]
-            # print('at stop 2. s= ',s,'.t = ',t)
-            #
-            # pdb.set_trace()
+
         try:
-            ft_no_break = np.squeeze(ft)
-            ft_no_break = ft_no_break[:,1:]
-            w_save = np.reshape(w[t][np.nonzero(w[t])], np.shape(ft_no_break))
-            state_mean_est[:,t] = np.sum(ft_no_break * w_save,axis = 1) / np.sum(w_save,axis = 1)
-            prob_state[:,t] = np.sum(w_save,axis = 1)
+            if S > 1:
+
+                ft_no_break = np.squeeze(ft)
+                ft_break[:,t] = ft_no_break[:,0]
+                ft_no_break = ft_no_break[:,1:]
+                w_save = np.reshape(w[t][np.nonzero(w[t])], np.shape(ft_no_break))
+                state_mean_est[:,t] = np.sum(ft_no_break * w_save,axis = 1) / np.sum(w_save,axis = 1)
+                prob_state[:,t] = np.sum(w_save,axis = 1)
+            else:
+                ft_no_break = np.squeeze(ft)
+                ft_break[:,t] = ft_no_break[0]
+                ft_no_break = ft_no_break[1:]
+                w_save = np.reshape(w[t][np.nonzero(w[t])], np.shape(ft_no_break))
+                state_mean_est[:,t] = np.sum(ft_no_break * w_save) / np.sum(w_save)
+                prob_state[:,t] = np.sum(w_save)
         except:
             pass
         loglik += logsumexp(np.reshape(logp, (np.size(logp), 1)), np.ones(shape=[1, 2 * S]))
-
-
-    print('done')
-    y = range(np.size(V))
-    plt.plot(np.sum(state_mean_est.T * prob_state.T, axis=1))
-    plt.show()
-    plt.plot(np.sum(state_mean_est.T * prob_state.T, axis=1))
-    plt.plot(V.T)
-
-
-    plt.show()
-    print('a')
-    return f, F, w, alpha, loglik
-
-
-
-
-
-
-
-
-
-
-
-"""
-        
-    return [f,F,w,alpha,loglik]
-
-    """
-#p,V,s,H = createData(20,5,6)
-#filtering(p,V,2)
+    reset_prob = sum(reset_prob,axis=1)
+    return f, F, w, alpha, loglik, reset_prob
